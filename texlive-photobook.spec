@@ -1,6 +1,6 @@
 Name:		texlive-photobook
-Version:	65022
-Release:	2
+Version:	68313
+Release:	1
 Summary:	A document class for typesetting photo books
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/photobook
