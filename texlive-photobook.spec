@@ -1,5 +1,5 @@
 Name:		texlive-photobook
-Version:	68313
+Version:	71843
 Release:	1
 Summary:	A document class for typesetting photo books
 Group:		Publishing
