@@ -3,7 +3,7 @@ Version:	71843
 Release:	1
 Summary:	A document class for typesetting photo books
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/photobook
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/photobook
 License:	bsd3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.doc.r%{version}.tar.xz
