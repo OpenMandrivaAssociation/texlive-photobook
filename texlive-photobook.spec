@@ -1,38 +1,50 @@
-Name:		texlive-photobook
-Version:	71843
-Release:	1
+%global tl_name photobook
+%global tl_revision 71843
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1.31
+Release:	%{tl_revision}.1
 Summary:	A document class for typesetting photo books
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/photobook
 License:	bsd3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/photobook.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(adjustbox)
+Requires:	texlive(atbegshi)
+Requires:	texlive(changepage)
+Requires:	texlive(colorspace)
+Requires:	texlive(environ)
+Requires:	texlive(eso-pic)
+Requires:	texlive(etoolbox)
+Requires:	texlive(fancyhdr)
+Requires:	texlive(fancyvrb)
+Requires:	texlive(flowfram)
+Requires:	texlive(geometry)
+Requires:	texlive(graphics)
+Requires:	texlive(hyperref)
+Requires:	texlive(iftex)
+Requires:	texlive(kvoptions)
+Requires:	texlive(listofitems)
+Requires:	texlive(mdframed)
+Requires:	texlive(numprint)
+Requires:	texlive(pagecolor)
+Requires:	texlive(pdfcomment)
+Requires:	texlive(pdfpages)
+Requires:	texlive(pgf)
+Requires:	texlive(textpos)
+Requires:	texlive(xargs)
+Requires:	texlive(xcolor)
+Requires:	texlive(xint)
+Requires:	texlive(xkeyval)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX document class extends the book class defining a set
-of parameters, meta-macros, macros and environments with
-reasonable defaults to help typeset, build and print books
-mainly based on visual/image content.
+The photobook LaTeX document class extends the book class defining a set
+of parameters, meta-macros, macros and environments with reasonable
+defaults to help typeset, build and print books mainly based on
+visual/image content.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/photobook
-%doc %{_texmfdistdir}/doc/latex/photobook
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
